@@ -25,7 +25,7 @@ export default {
       try {
         this.products = await fetchProducts();
       } catch (err) {
-        console.log(console.log);
+        console.warn(err);
       }
     },
   },
