@@ -12,6 +12,9 @@ module.exports = {
         exposes: {
           "./Products": "./src/components/Products",
         },
+        remotes: {
+          root: process.env.REMOTE_ROOT,
+        },
         shared: require("./package.json").dependencies,
       }),
     ],
