@@ -1,5 +1,5 @@
 {
-  "name": "@microfrontend-vue/products",
+  "name": "@microfrontend-vue/auth",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,7 +7,7 @@
     "build": "vue-cli-service build --mode production",
     "lint": "vue-cli-service lint",
     "clean": "rm -rf dist",
-    "start": "vue-cli-service build --mode other && http-server -c-1 -p 3002 ./dist"
+    "start": "vue-cli-service build --mode other && http-server -c-1 -p 3006 ./dist"
   },
   "dependencies": {
     "core-js": "^3.6.5",

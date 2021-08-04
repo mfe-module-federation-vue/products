@@ -1,23 +1,18 @@
 <template>
   <v-app>
     <v-main>
-      <Products />
+      <Login />
     </v-main>
   </v-app>
 </template>
 
 <script>
-import Products from "./components/Products";
+import Login from "./components/Login";
 
 export default {
   name: "App",
-
   components: {
-    Products,
+    Login,
   },
-
-  data: () => ({
-    //
-  }),
 };
 </script>

@@ -7,20 +7,18 @@ module.exports = {
   configureWebpack: {
     plugins: [
       new ModuleFederationPlugin({
-        name: "products",
+        name: "auth",
         filename: "remoteEntry.js",
         exposes: {
-          "./Products": "./src/components/Products",
-        },
-        remotes: {
-          root: process.env.REMOTE_ROOT,
+          "./Login": "./src/components/Login",
+          "./Logout": "./src/components/Logout",
         },
         shared: require("./package.json").dependencies,
       }),
     ],
   },
   devServer: {
-    port: 3002,
+    port: 3006,
     progress: false,
   },
 };
