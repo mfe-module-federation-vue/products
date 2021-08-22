@@ -20,23 +20,23 @@
     ></v-progress-linear>
 
     <v-card-actions>
-      <v-btn
-        color="deep-purple lighten-2"
-        :disabled="added"
-        text
-        @click="reserve"
-      >
+      <DSButton :disabled="added" @click="reserve">
         {{ added ? "In Cart" : "Add to Cart" }}
-      </v-btn>
+      </DSButton>
     </v-card-actions>
   </v-card>
 </template>
 
 <script>
 import { buyRequest } from "@/service/buy.service.js";
+import DSButton from "ds/DSButton";
+
 export default {
   name: "Product",
   props: ["product"],
+  components: {
+    DSButton,
+  },
   data: () => ({
     loading: false,
     added: false,
