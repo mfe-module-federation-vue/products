@@ -13,7 +13,6 @@ module.exports = {
           "./Products": "./src/components/Products",
         },
         remotes: {
-          root: process.env.REMOTE_ROOT,
           ds: process.env.REMOTE_DS,
         },
         shared: require("./package.json").dependencies,

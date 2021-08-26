@@ -11,7 +11,6 @@
 <script>
 import Product from "./Product.vue";
 import { fetchProducts } from "@/service/products.service.js";
-import userConfig from "root/userModuleFromRootByHelper";
 
 export default {
   name: "Products",
@@ -22,9 +21,7 @@ export default {
   mounted() {
     this.fetchData();
   },
-  async created() {
-    console.log("prod", userConfig.allData());
-  },
+  async created() {},
   methods: {
     async fetchData() {
       try {
