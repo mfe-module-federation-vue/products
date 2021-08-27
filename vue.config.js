@@ -15,7 +15,14 @@ module.exports = {
         remotes: {
           ds: process.env.REMOTE_DS,
         },
-        shared: require("./package.json").dependencies,
+        shared: {
+          vuetify: {
+            singleton: true,
+          },
+          vue: {
+            singleton: true,
+          },
+        },
       }),
     ],
   },
