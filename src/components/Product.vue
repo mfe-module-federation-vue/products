@@ -62,13 +62,14 @@ export default {
       try {
         const response = await buyRequest(this.product);
         this.added = !!response.id;
-        cartEmitter.emit(EVENT_KEYS.CART, () => {
-          return {
-            name: this.productName,
-            quantity: Math.floor(Math.random() * 10) || 1,
-            unitPrice: this.price,
-          };
-        });
+        this.added &&
+          cartEmitter.emit(EVENT_KEYS.CART, () => {
+            return {
+              name: this.productName,
+              quantity: Math.floor(Math.random() * 10) || 1,
+              unitPrice: this.price,
+            };
+          });
       } catch (err) {
         console.dir(err);
       } finally {
