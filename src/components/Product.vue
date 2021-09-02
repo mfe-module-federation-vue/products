@@ -35,7 +35,7 @@
 <script>
 import { buyRequest } from "@/service/buy.service.js";
 import DSButton from "ds/DSButton";
-import { addToCart } from "../dealful";
+import { cartEmitter, EVENT_KEYS } from "../dealful";
 
 export default {
   name: "Product",
@@ -62,10 +62,12 @@ export default {
       try {
         const response = await buyRequest(this.product);
         this.added = !!response.id;
-        addToCart({
-          name: this.productName,
-          quantity: Math.floor(Math.random() * 10) || 1,
-          unitPrice: this.price,
+        cartEmitter.emit(EVENT_KEYS.CART, () => {
+          return {
+            name: this.productName,
+            quantity: Math.floor(Math.random() * 10) || 1,
+            unitPrice: this.price,
+          };
         });
       } catch (err) {
         console.dir(err);
