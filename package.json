@@ -13,7 +13,8 @@
     "core-js": "^3.6.5",
     "http-server": "^0.12.3",
     "vue": "^2.6.11",
-    "vuetify": "^2.4.0"
+    "vuetify": "^2.4.0",
+    "@mfe-module-federation-vue/dealful-package": "^0.0.7"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "5.0.0-beta.2",
